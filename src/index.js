@@ -9,13 +9,10 @@ const app = express();
 app.set('port', PORT || 5000);
 app.use(helmet());
 app.use(morgan('tiny'));
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
-console.log(__dirname + '/../public')
-
-app.get('/', (request, response) => (response.sendFile(path.join(__dirname, 'index.html'))));
-
-// app.use('*', (request, response) => (response.sendStatus(404)));
+app.get('*', (request, response) => (response.sendFile(path.join(__dirname, '..', 'public', 'index.html'))));
+app.use('*', (request, response) => (response.sendStatus(404)));
 
 app.listen(app.get('port'), () => {
   console.log(`[${NODE_ENV}] listening on port ${app.get('port')}`);
