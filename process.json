@@ -1,0 +1,13 @@
+{
+  "apps" : [{
+    "name": "dmacrva",
+    "script": "dist/index.js",
+    "instances": 1,
+    "watch": false,
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": 5000
+    }
+  }]
+}
