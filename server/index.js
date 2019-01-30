@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')))
 
-app.get('/', (request, response) => {
+app.get('/*', (request, response) => {
   const file = path.join(__dirname, '..', 'client', 'build', 'index.html');
   return response.status(200).sendFile(file);
 });
