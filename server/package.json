@@ -4,8 +4,14 @@
   "description": "servar for websit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=development PORT=5000 nodemon ./index.js",
+    "serve": "pm2 startOrRestart process.json --env production"
   },
   "author": "Daniel MacPhee <dmacrva@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "underscore": "^1.9.1"
+  }
 }
