@@ -42,7 +42,7 @@ a:visited {
 }
 
 .container {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 
@@ -70,6 +70,7 @@ a:visited {
   margin-left: 33vw;
   width: 33vw;
   text-align: center;
+  padding-bottom: 64px;
 }
 
 .thing {
@@ -82,7 +83,8 @@ a:visited {
   bottom: 12px;
 }
 
-@media screen and (max-width: 925px) {
+/* @media screen and (max-width: ) */
+@media screen and (max-width: 926px) {
   .home-title {
     padding-top: 24px;
     line-height: 164px;
@@ -96,10 +98,10 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
   .home-title {
     padding-top: 48px;
-    font-size: 96px;
+    font-size: 72px;
     line-height: 120px;
   }
 
@@ -110,8 +112,22 @@ a:visited {
     border-color: #E8C1C5;
   }
 
+  .home-subtitle {
+    font-size: 24px;
+  }
+
   .list-of-things {
     margin-left: 10vw;
     width: 80vw;
+  }
+
+  .thing {
+    font-size: 16px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 926px) {
+  .footer-text {
+    position: relative;
   }
 }
