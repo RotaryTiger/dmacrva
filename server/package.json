@@ -4,14 +4,28 @@
   "description": "servar for websit",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development PORT=5000 nodemon ./index.js",
-    "serve": "pm2 startOrRestart process.json --env production"
+    "build": "rm -rf dist && babel src -d dist",
+    "start": "NODE_ENV=development PORT=5000 nodemon --exec babel-node src/index.js",
+    "serve": "npm run build && pm2 startOrRestart process.json --env production"
   },
   "author": "Daniel MacPhee <dmacrva@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1"
   }
 }
