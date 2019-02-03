@@ -2,7 +2,8 @@ import utils from './utils';
 
 const { rollOnTable } = utils;
 
-export default abilities => ({
-  modifiedAbilities: [...abilities],
-  race: rollOnTable('races'),
-});
+export default (characterClass) => {
+  const { generateRandom } = rollOnTable('races');
+
+  return generateRandom(characterClass);
+};

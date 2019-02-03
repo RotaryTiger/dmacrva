@@ -4,7 +4,7 @@ import equipment from '../equipment';
 const { simple, martial } = equipment.weapons.melee;
 const { packs } = equipment;
 
-const name = 'Barbarian';
+const className = 'Barbarian';
 
 const statPrefs = [
   ['STR', 'CON', 'DEX', 'WIS', 'INT', 'CHA'],
@@ -25,12 +25,13 @@ const classSkills = [
   'Survival',
 ];
 
-const proficiencies = {
+const classProficiencies = {
   armor: ['Light', 'Medium', 'Shields'],
   weapons: ['Simple', 'Martial'],
   tools: [],
   saves: ['STR', 'CON'],
   skills: [],
+  languages: [],
 };
 
 const classFeatures = [
@@ -44,43 +45,43 @@ const classFeatures = [
   },
 ];
 
+const getEquipment = ({ rollOnArray }) => [
+  rollOnArray([
+    martial[3],
+    rollOnArray(martial),
+  ]),
+  rollOnArray([
+    `2x ${simple[3]}`,
+    rollOnArray(simple),
+  ]),
+  `4x ${simple[4]}`,
+  ...packs.explorer,
+];
+
 export default {
-  name,
+  className,
   statPrefs,
   generateRandom: (abilityScores) => {
     const {
       rollOnArray,
       getUniqueEntries,
-      formatAbilityScores,
       optimizeAbilityScores,
     } = utils;
+
     const abilities = optimizeAbilityScores({ abilityScores, statPrefs });
-    const formattedAbilityScores = formatAbilityScores(abilities);
-    const { CON } = abilities;
+    const proficiencies = {
+      ...classProficiencies,
+      skills: getUniqueEntries(2, classSkills),
+    };
 
     return {
-      name,
+      className,
       hitDice,
-      hitPoints: hitPoints + CON.mod,
-      formattedAbilityScores,
+      hitPoints,
       abilities,
-      proficiencies: {
-        ...proficiencies,
-        skills: getUniqueEntries(2, classSkills),
-      },
-      equipment: [
-        rollOnArray([
-          martial[3],
-          rollOnArray(martial),
-        ]),
-        rollOnArray([
-          `2x ${simple[3]}`,
-          rollOnArray(simple),
-        ]),
-        `4x ${simple[4]}`,
-        ...packs.explorer,
-      ],
       classFeatures,
+      proficiencies,
+      equipment: getEquipment({ rollOnArray }),
     };
   },
 };

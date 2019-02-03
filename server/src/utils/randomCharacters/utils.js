@@ -16,6 +16,14 @@ const optimizeAbilityScores = ({ abilityScores, statPrefs }) => {
   };
 };
 
+const addBonusesToScores = ({ abilityScores, bonuses }) => {
+  const newScores = mapObject(bonuses, (bonus, stat) => abilityScores[stat].score + bonus);
+  return {
+    ...newScores,
+    ...getMods(newScores),
+  };
+};
+
 const getUniqueEntries = (number, array) => {
   const addAndCheck = (temp = []) => {
     temp.push(rollOnArray(array));
@@ -25,6 +33,22 @@ const getUniqueEntries = (number, array) => {
     return addAndCheck(uniq(temp));
   };
   return addAndCheck();
+};
+
+const getUniqueProficiencies = (classProfs, raceProfs) => {
+  console.log({ classSkills: classProfs.skills });
+  console.log({ raceSkills: raceProfs.skills });
+  console.log({ classLangs: classProfs.languages });
+  console.log({ raceLangs: raceProfs.languages });
+
+  return {
+    weapons: uniq(classProfs.weapons.concat(raceProfs.weapons)),
+    armor: uniq(classProfs.armor.concat(raceProfs.armor)),
+    tools: uniq(classProfs.tools.concat(raceProfs.tools)),
+    saves: uniq(classProfs.saves.concat(raceProfs.saves)),
+    skills: uniq(classProfs.skills.concat(raceProfs.skills)),
+    languages: uniq(classProfs.languages.concat(raceProfs.languages)),
+  };
 };
 
 const formatAbilityScores = scores => mapObject(scores, score => `${score.score} (${score.mod})`);
@@ -37,4 +61,6 @@ export default {
   getMod,
   getMods,
   formatAbilityScores,
+  addBonusesToScores,
+  getUniqueProficiencies,
 };
