@@ -65,7 +65,19 @@ const armor = {
 
 const gear = {};
 
-const packs = {};
+
+const packs = {
+  explorer: [
+    'Backpack',
+    'Bedroll',
+    'Mess kit',
+    'Tinderbox',
+    '10x Torch',
+    '10x Rations',
+    'Waterskin',
+    'Hempen Rope, 50ft',
+  ],
+};
 
 export default {
   weapons,
