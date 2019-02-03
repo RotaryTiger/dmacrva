@@ -1,7 +1,11 @@
-import { rollOnTable } from './utils';
+import utils from './utils';
+
+const { rollOnTable } = utils;
 
 export default (abilityScores) => {
-  const { generateRandom } = rollOnTable('classes');
+  const randomClass = rollOnTable('classes');
 
-  return generateRandom(abilityScores);
+  console.log({ randomClass });
+
+  return randomClass.generateRandom(abilityScores);
 };

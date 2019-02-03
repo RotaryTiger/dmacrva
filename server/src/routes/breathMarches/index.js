@@ -5,4 +5,4 @@ const router = Router();
 
 router.get('/random', getRandomCharacter);
 
-module.exports = router;
+export default router;

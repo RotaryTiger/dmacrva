@@ -5,11 +5,6 @@ import classes from './classes';
 // import skills from './skills';
 // import equipment from './equipment';
 
-import utils from '../utils';
-
-console.log({ utils });
-
-
 export default {
   abilityScores,
   // backgrounds,

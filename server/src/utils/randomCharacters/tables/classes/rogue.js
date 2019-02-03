@@ -1,4 +1,4 @@
-const { optimizeAbilityScores } = require('../../utils');
+import utils from '../../utils';
 
 const name = 'Rogue';
 const statPrefs = [
@@ -13,10 +13,11 @@ const statPrefs = [
   ['STR', 'CON', 'DEX', 'WIS', 'INT', 'CHA'],
 ];
 
-module.exports = {
+export default {
   name,
   statPrefs,
   generateRandom: (abilityScores) => {
+    const { optimizeAbilityScores } = utils;
     const optimizedAbilityScores = optimizeAbilityScores({ abilityScores, statPrefs });
 
     return {

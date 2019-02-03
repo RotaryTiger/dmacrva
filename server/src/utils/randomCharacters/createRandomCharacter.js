@@ -1,5 +1,7 @@
 import getClass from './getClass';
-import { rollOnTable } from './utils';
+import utils from './utils';
+
+const { rollOnTable } = utils;
 
 const createRandomCharacter = () => {
   const abilities = rollOnTable('abilityScores');

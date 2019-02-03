@@ -1,4 +1,6 @@
-const { rollOnTable } = require('./utils');
+import utils from './utils';
+
+const { rollOnTable } = utils;
 
 export default abilities => ({
   modifiedAbilities: [...abilities],

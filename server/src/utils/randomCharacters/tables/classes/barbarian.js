@@ -1,6 +1,4 @@
-import { optimizeAbilityScores } from '../../utils';
-
-console.log({ optimizeAbilityScores });
+import utils from '../../utils';
 
 const name = 'Barbarian';
 const statPrefs = [
@@ -11,6 +9,7 @@ const statPrefs = [
 ];
 
 const generateRandom = (abilityScores) => {
+  const { optimizeAbilityScores } = utils;
   const optimizedAbilityScores = optimizeAbilityScores({ abilityScores, statPrefs });
 
   return {
@@ -19,7 +18,7 @@ const generateRandom = (abilityScores) => {
   };
 };
 
-export {
+export default {
   name,
   statPrefs,
   generateRandom,

@@ -5,4 +5,4 @@ const router = Router();
 
 router.use('/breath-marches', breathMarches);
 
-module.exports = router;
+export default router;
