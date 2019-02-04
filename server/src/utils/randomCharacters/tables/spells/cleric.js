@@ -8,7 +8,7 @@ const cantrips = [
   'Thaumaturgy',
 ];
 
-const first = [
+const firstLevel = [
   'Bane',
   'Bless',
   'Command',
@@ -28,5 +28,5 @@ const first = [
 
 export default {
   cantrips,
-  first,
+  firstLevel,
 };

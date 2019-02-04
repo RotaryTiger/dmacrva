@@ -5,7 +5,7 @@ import domains from './domains';
 
 const { weapons, packs, armor } = equipment;
 const { melee, ranged } = weapons;
-const { cantrips, first } = spells.cleric;
+const { cantrips, firstLevel } = spells.cleric;
 
 const className = 'Cleric';
 const statPrefs = [
@@ -86,34 +86,28 @@ export default {
       getUniqueEntries,
       optimizeAbilityScores,
     } = utils;
-    // console.log('pre abilities');
+
     const abilities = optimizeAbilityScores({ abilityScores, statPrefs });
-    // console.log('pre profs');
     const proficiencies = {
       ...classProficiencies,
       skills: getUniqueEntries(2, classSkills),
     };
-    // console.log('pre-domains');
     const domain = rollOnArray(domains);
-    // console.log('pre-quipment');
-    const quipment = getEquipment({ rollOnArray });
-
-    console.log({ quipment });
 
     return {
       className,
       hitDice,
       hitPoints,
       abilities,
+      proficiencies,
       classFeatures: [
         ...classFeatures,
         ...domain.domainFeatures,
       ],
-      proficiencies,
-      equipment: quipment,
+      equipment: getEquipment({ rollOnArray }),
       spells: {
         cantrips: getUniqueEntries(3, cantrips),
-        firstLevel: first,
+        firstLevel,
       },
     };
   },

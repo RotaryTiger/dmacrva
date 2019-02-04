@@ -7,7 +7,7 @@ const domainFeatures = [
   },
   {
     name: 'Disciple of War',
-    description: 'WIS (min 1) per long rest: [Bonus Action] When you use the Attack action, you can make one weapon attack as a Bonus Action.',
+    description: 'WIS (min 1) times per long rest: [Bonus Action] When you use the Attack action, you can make one weapon attack as a Bonus Action.',
   },
   {
     name: 'Bonus Proficiencies',

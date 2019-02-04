@@ -34,7 +34,7 @@ const proficiencies = {
   tools: [],
   skills: ['random', 'random'],
   saves: [],
-  languages: [],
+  languages: ['Common', 'Zora'],
 };
 const speed = 30;
 const size = 'Medium';

@@ -12,7 +12,7 @@ const cantrips = [
   'Vicious Mockery',
 ];
 
-const first = [
+const firstLevel = [
   'Animal Friendship',
   'Bane',
   'Charm Person',
@@ -38,5 +38,5 @@ const first = [
 
 export default {
   cantrips,
-  first,
+  firstLevel,
 };

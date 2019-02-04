@@ -6,7 +6,7 @@ import spells from '../spells';
 const { weapons, tools, packs } = equipment;
 const { instruments } = tools;
 const { melee, ranged } = weapons;
-const { cantrips, first } = spells.bard;
+const { cantrips, firstLevel } = spells.bard;
 
 const className = 'Bard';
 const statPrefs = [
@@ -99,7 +99,7 @@ export default {
       equipment: getEquipment({ rollOnArray }),
       spells: {
         cantrips: getUniqueEntries(2, cantrips),
-        firstLevel: getUniqueEntries(4, first),
+        firstLevel: getUniqueEntries(4, firstLevel),
       },
     };
   },
