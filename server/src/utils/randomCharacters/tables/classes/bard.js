@@ -36,7 +36,15 @@ const classProficiencies = {
 const classFeatures = [
   {
     name: 'Spellcasting',
-    description: 'You know two Cantrips and four 1st-level spells. You have two 1st-level spell slots. Your spellcasting ability is Charisma (DC = 8 + Prof. + CHA; d20 + Prof. + CHA to hit).',
+    description: 'You know two Cantrips and four 1st-level spells. You have two 1st-level spell slots. You can use a musical instrument as a spellcasting focus for your Bard spells.',
+  },
+  {
+    name: 'Spellcasting Ability',
+    description: 'Your spellcasting ability is Charisma (DC = 8 + Prof. + CHA; d20 + Prof. + CHA to hit).',
+  },
+  {
+    name: 'Ritual Casting',
+    description: 'You can cast any Bard spell you know as a ritual if it has the Ritual tag.',
   },
   {
     name: 'Bardic Inspiration',
