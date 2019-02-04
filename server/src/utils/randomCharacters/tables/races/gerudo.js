@@ -1,7 +1,7 @@
 import utils from '../../utils';
 import equipment from '../equipment';
 
-const name = 'Gerudo';
+const raceName = 'Gerudo';
 
 const bonuses = {
   STR: 1,
@@ -14,16 +14,16 @@ const bonuses = {
 
 const racialFeatures = [
   {
-    featureName: 'Desert Dweller',
-    featureDescription: 'You can endure unusually hot or dry climates without difficulty, and have Advantage on Survival checks made in desert terrain',
+    name: 'Desert Dweller',
+    description: 'You can endure unusually hot or dry climates without difficulty, and have Advantage on Survival checks made in desert terrain',
   },
   {
-    featureName: 'Martial Adept',
-    featureDescription: 'You gain the Martial Adept feat.',
+    name: 'Martial Adept',
+    description: 'You gain the Martial Adept feat.',
   },
   {
-    featureName: 'Military Genius',
-    featureDescription: 'Once per long or short rest, when you miss an attack roll with a weapon, you may gain a bonus equal to your Intelligence modifier (minimum 1).',
+    name: 'Military Genius',
+    description: 'Once per long or short rest, when you miss an attack roll with a weapon, you may gain a bonus equal to your Intelligence modifier (minimum 1).',
   },
 ];
 
@@ -59,7 +59,7 @@ const getProficiencies = ({ stats, rollOnArray, getUniqueProficiencies }) => {
 };
 
 export default {
-  name,
+  raceName,
   bonuses,
   racialFeatures,
   proficiencies,
@@ -79,7 +79,7 @@ export default {
     const { CON } = abilityScores;
 
     return {
-      name,
+      raceName,
       abilityScores,
       racialFeatures,
       speed,

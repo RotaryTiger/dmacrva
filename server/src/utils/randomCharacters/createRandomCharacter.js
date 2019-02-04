@@ -9,7 +9,12 @@ const createRandomCharacter = () => {
   const characterClass = getClass(abilities);
   const characterRace = getRace(characterClass);
 
-  const { className, hitDice, classFeatures, equipment } = characterClass;
+  const {
+    className,
+    hitDice,
+    classFeatures,
+    equipment,
+  } = characterClass;
   const {
     raceName,
     hitPoints,
