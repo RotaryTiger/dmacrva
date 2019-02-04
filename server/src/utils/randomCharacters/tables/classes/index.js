@@ -1,6 +1,6 @@
 import barbarian from './barbarian';
 import bard from './bard';
-// import cleric from './cleric';
+import cleric from './cleric';
 // import druid from './druid';
 // import fighter from './fighter';
 // import monk from './monk';
@@ -12,9 +12,9 @@ import bard from './bard';
 // import wizard from './wizard';
 
 export default [
-  barbarian,
-  bard,
-  // cleric,
+  // barbarian,
+  // bard,
+  cleric,
   // druid,
   // fighter,
   // monk,

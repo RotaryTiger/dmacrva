@@ -52,15 +52,24 @@ const weapons = {
 
 const armor = {
   light: [
-    'Padded (AC 11+DEX, Disadvantage on Stealth checks)',
-    'Leather (AC 11+DEX)',
-    'Studded Leather (AC 12+DEX)',
+    'Padded (AC 11 + DEX, Disadvantage on Stealth checks)',
+    'Leather (AC 11 + DEX)',
+    'Studded Leather (AC 12 + DEX)',
   ],
   medium: [
-    'Hide (AC 12+DEX [max 2])',
+    'Hide (AC 12 + DEX [max 2])',
+    'Chain Shirt (AC 13 + DEX [max 2])',
+    'Scale Mail (AC 14 + DEX [max 2], Disadvantage on Stealth checks)',
+    'Breastplate (AC 14 + DEX [max 2])',
+    'Half Plate (AC 15 + DEX [max 2], Disadvantage on Stealth checks)',
   ],
-  heavy: [],
-  shield: 'Shield',
+  heavy: [
+    'Ring Mail (AC 14, Disadvantage on Stealth checks)',
+    'Chain Mail (AC 16, Disadvantage on Stealth checks, Requires Strength 13)',
+    'Splint (AC 17, Disadvantage on Stealth checks, Requires Strength 15)',
+    'Plate (AC 18, Disadvantage on Stealth checks, Requires Strength 15)',
+  ],
+  shield: 'Shield (+2 AC)',
 };
 
 const gear = {};
@@ -80,7 +89,7 @@ const tools = {
   ],
 };
 
-// backpack, a bedroll, 2 costumes, 5 candles, 5 days of rations, a waterskin, and a disguise kit.
+// backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin.
 
 const packs = {
   diplomat: [
@@ -125,6 +134,18 @@ const packs = {
     '10x Rations',
     'Waterskin',
     'Hempen Rope, 50ft',
+  ],
+  priest: [
+    'Backpack',
+    'Blanket',
+    '10x Candles',
+    'Tinderbox',
+    'Alms box',
+    '2x Block of incense',
+    'Censer',
+    'Vestments',
+    '2x Rations',
+    'Waterskin',
   ],
 };
 

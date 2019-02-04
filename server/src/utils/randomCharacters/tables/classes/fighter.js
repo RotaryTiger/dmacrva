@@ -1,6 +1,6 @@
 import utils from '../../utils';
 
-const name = 'Fighter';
+const className = 'Fighter';
 const statPrefs = [
   ['STR', 'CON', 'DEX', 'CHA', 'WIS', 'INT'],
   ['STR', 'CON', 'DEX', 'WIS', 'CHA', 'INT'],
@@ -13,14 +13,14 @@ const statPrefs = [
 ];
 
 export default {
-  name,
+  className,
   statPrefs,
   generateRandom: (abilityScores) => {
     const { optimizeAbilityScores } = utils;
     const optimizedAbilityScores = optimizeAbilityScores({ abilityScores, statPrefs });
 
     return {
-      name,
+      className,
       optimizedAbilityScores,
     };
   },
