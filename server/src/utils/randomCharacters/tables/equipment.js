@@ -65,8 +65,57 @@ const armor = {
 
 const gear = {};
 
+const tools = {
+  instruments: [
+    'Bagpipes',
+    'Drum',
+    'Dulcimer',
+    'Flute',
+    'Lute',
+    'Lyre',
+    'Horn',
+    'Pan flute',
+    'Shawm',
+    'Viol',
+  ],
+};
+
+// backpack, a bedroll, 2 costumes, 5 candles, 5 days of rations, a waterskin, and a disguise kit.
 
 const packs = {
+  diplomat: [
+    'Chest',
+    '2x cases (for maps/scrolls)',
+    'Set of fine clothes',
+    'Bottle of ink',
+    'Ink pen',
+    'Lamp',
+    '2x Oil Flask',
+    '5x Sheet of paper',
+    'Vial of perfume',
+    'Sealing wax',
+    'Soap',
+  ],
+  dungeoneer: [
+    'Backpack',
+    'Crowbar',
+    'Hammer',
+    '10x Piton',
+    '10x Torch',
+    'Tinderbox',
+    '10x Rations',
+    'Waterskin',
+    'Hempen Rope, 50ft',
+  ],
+  entertainer: [
+    'Backpack',
+    'Bedroll',
+    '2x Costume',
+    '5x Candle',
+    '5x Rations',
+    'Waterskin',
+    'Disguise kit',
+  ],
   explorer: [
     'Backpack',
     'Bedroll',
@@ -84,4 +133,5 @@ export default {
   armor,
   packs,
   gear,
+  tools,
 };

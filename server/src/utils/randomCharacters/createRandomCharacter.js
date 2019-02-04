@@ -14,6 +14,7 @@ const createRandomCharacter = () => {
     hitDice,
     classFeatures,
     equipment,
+    spells,
   } = characterClass;
   const {
     raceName,
@@ -39,6 +40,7 @@ const createRandomCharacter = () => {
     classFeatures,
     proficiencies,
     equipment,
+    spells,
   };
 };
 

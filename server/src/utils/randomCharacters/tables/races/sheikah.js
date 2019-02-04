@@ -32,6 +32,7 @@ const proficiencies = {
   armor: [],
   tools: [],
   skills: [],
+  saves: [],
   languages: [],
 };
 const speed = 35;

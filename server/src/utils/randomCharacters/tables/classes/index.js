@@ -1,5 +1,5 @@
 import barbarian from './barbarian';
-// import bard from './bard';
+import bard from './bard';
 // import cleric from './cleric';
 // import druid from './druid';
 // import fighter from './fighter';
@@ -13,7 +13,7 @@ import barbarian from './barbarian';
 
 export default [
   barbarian,
-  // bard,
+  bard,
   // cleric,
   // druid,
   // fighter,

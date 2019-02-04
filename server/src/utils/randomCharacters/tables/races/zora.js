@@ -36,6 +36,7 @@ const proficiencies = {
   armor: [],
   tools: [],
   skills: [],
+  saves: [],
   languages: ['Common', 'Zora'],
 };
 const speed = 30;
