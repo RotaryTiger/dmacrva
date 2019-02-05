@@ -5,8 +5,8 @@
 // import fighter from './fighter';
 // import monk from './monk';
 // import paladin from './paladin';
-import ranger from './ranger';
-// import rogue from './rogue';
+// import ranger from './ranger';
+import rogue from './rogue';
 // import sorcerer from './sorcerer';
 // import warlock from './warlock';
 // import wizard from './wizard';
@@ -19,8 +19,8 @@ export default [
   // fighter,
   // monk,
   // paladin,
-  ranger,
-  // rogue,
+  // ranger,
+  rogue,
   // sorcerer,
   // warlock,
   // wizard,

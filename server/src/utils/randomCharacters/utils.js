@@ -74,6 +74,16 @@ const getUniqueProficiencies = (classProfs, raceProfs) => {
 
 const formatAbilityScores = scores => mapObject(scores, score => `${score.score} (${score.mod})`);
 
+const replaceInArray = (oldValue, newValue, array) => {
+  const newArray = array;
+  const oldIndex = array.indexOf(oldValue);
+  if (oldIndex === -1) {
+    return array;
+  }
+  newArray[oldIndex] = newValue;
+  return newArray;
+};
+
 export default {
   rollOnArray,
   rollOnTable,
@@ -84,4 +94,5 @@ export default {
   formatAbilityScores,
   addBonusesToScores,
   getUniqueProficiencies,
+  replaceInArray,
 };

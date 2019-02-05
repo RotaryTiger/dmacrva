@@ -90,6 +90,22 @@ const tools = {
 };
 
 const packs = {
+  burglar: [
+    'Backpack',
+    'Bag of 1000 ball bearings',
+    '10 feet of string',
+    'Bell',
+    '5x Candle',
+    'Crowbar',
+    'Hammer',
+    '10x Piton',
+    'Hooded Lantern',
+    '2x Flask of Oil',
+    '5x Rations',
+    'Tinderbox',
+    'Waterskin',
+    '50ft Hempen rope',
+  ],
   diplomat: [
     'Chest',
     '2x cases (for maps/scrolls)',
