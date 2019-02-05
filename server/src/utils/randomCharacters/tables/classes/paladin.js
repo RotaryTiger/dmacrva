@@ -14,7 +14,14 @@ const hitPoints = 10;
 
 const classSkills = [];
 
-const classProficiencies = {};
+const classProficiencies = {
+  armor: [],
+  weapons: [],
+  tools: [],
+  saves: [],
+  skills: [],
+  languages: [],
+};
 
 const classFeatures = [];
 

@@ -2,8 +2,8 @@
 // import bard from './bard';
 // import cleric from './cleric';
 // import druid from './druid';
-import fighter from './fighter';
-// import monk from './monk';
+// import fighter from './fighter';
+import monk from './monk';
 // import paladin from './paladin';
 // import ranger from './ranger';
 // import rogue from './rogue';
@@ -16,8 +16,8 @@ export default [
   // bard,
   // cleric,
   // druid,
-  fighter,
-  // monk,
+  // fighter,
+  monk,
   // paladin,
   // ranger,
   // rogue,
