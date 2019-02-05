@@ -1,8 +1,9 @@
 import utils from '../../utils';
 import equipment from '../equipment';
 
-const { weapons, packs } = equipment;
+const { weapons, packs, tools } = equipment;
 const { melee, ranged } = weapons;
+const { artisans, instruments } = tools;
 
 const className = 'Monk';
 const statPrefs = [
@@ -74,6 +75,7 @@ export default {
     const proficiencies = {
       ...classProficiencies,
       skills: getUniqueEntries(2, classSkills),
+      tools: [rollOnArray([...artisans, ...instruments])],
     };
 
     return {

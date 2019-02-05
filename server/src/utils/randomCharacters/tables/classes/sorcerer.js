@@ -51,7 +51,7 @@ const classFeatures = [
 const getEquipment = ({ rollOnArray }) => [
   ...rollOnArray([
     [
-      ranged.simple[2],
+      ranged.simple[1],
       '20 bolts',
     ],
     [rollOnArray([...melee.simple, ...ranged.simple])],
