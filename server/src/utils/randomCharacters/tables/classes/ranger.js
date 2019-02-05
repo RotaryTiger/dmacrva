@@ -51,9 +51,9 @@ const getEquipment = ({ rollOnArray }) => [
     armor.medium[2],
     armor.light[1],
   ]),
-  rollOnArray([
-    `2x ${melee.martial[13]}`,
-    ...[
+  ...rollOnArray([
+    [`2x ${melee.martial[13]}`],
+    [
       rollOnArray(melee.simple),
       rollOnArray(melee.simple),
     ],

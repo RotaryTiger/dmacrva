@@ -161,6 +161,15 @@ const packs = {
     '2x Rations',
     'Waterskin',
   ],
+  scholar: [
+    'Backpack',
+    'Book of lore',
+    'Bottle of ink',
+    'Ink pen',
+    '10x Sheet of parchment',
+    'Little bag of sand',
+    'Small knife',
+  ],
 };
 
 export default {

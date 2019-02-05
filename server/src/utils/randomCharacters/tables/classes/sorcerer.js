@@ -49,12 +49,12 @@ const classFeatures = [
 ];
 
 const getEquipment = ({ rollOnArray }) => [
-  rollOnArray([
-    ...[
+  ...rollOnArray([
+    [
       ranged.simple[2],
       '20 bolts',
     ],
-    rollOnArray([...melee.simple, ...ranged.simple]),
+    [rollOnArray([...melee.simple, ...ranged.simple])],
   ]),
   rollOnArray([
     'Component Pouch',
@@ -106,6 +106,8 @@ const getSorcerousOrigin = ({ rollOnArray }) => {
     wildMagic,
   ]);
 };
+
+// TODO: Wild Magic
 
 export default {
   className,

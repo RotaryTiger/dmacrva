@@ -46,12 +46,12 @@ const classFeatures = [
 ];
 
 const getEquipment = ({ rollOnArray }) => [
-  rollOnArray([
-    ...[
+  ...rollOnArray([
+    [
       rollOnArray([...melee.martial, ...ranged.martial]),
       armor.shield,
     ],
-    ...[
+    [
       rollOnArray([...melee.martial, ...ranged.martial]),
       rollOnArray([...melee.martial, ...ranged.martial]),
     ],

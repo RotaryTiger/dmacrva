@@ -7,8 +7,8 @@
 // import paladin from './paladin';
 // import ranger from './ranger';
 // import rogue from './rogue';
-import sorcerer from './sorcerer';
-// import warlock from './warlock';
+// import sorcerer from './sorcerer';
+import warlock from './warlock';
 // import wizard from './wizard';
 
 export default [
@@ -21,7 +21,7 @@ export default [
   // paladin,
   // ranger,
   // rogue,
-  sorcerer,
-  // warlock,
+  // sorcerer,
+  warlock,
   // wizard,
 ];

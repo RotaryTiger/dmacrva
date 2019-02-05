@@ -59,12 +59,12 @@ const getEquipment = ({ rollOnArray }) => [
     melee.martial[11],
     melee.martial[13],
   ]),
-  rollOnArray([
-    ...[
+  ...rollOnArray([
+    [
       ranged.simple[2],
       'Quiver w/ 20 arrows',
     ],
-    melee.martial[13],
+    [melee.martial[13]],
   ]),
   ...rollOnArray([
     packs.burglar,
