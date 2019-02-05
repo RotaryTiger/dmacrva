@@ -8,8 +8,8 @@
 // import ranger from './ranger';
 // import rogue from './rogue';
 // import sorcerer from './sorcerer';
-import warlock from './warlock';
-// import wizard from './wizard';
+// import warlock from './warlock';
+import wizard from './wizard';
 
 export default [
   // barbarian,
@@ -22,6 +22,6 @@ export default [
   // ranger,
   // rogue,
   // sorcerer,
-  warlock,
-  // wizard,
+  // warlock,
+  wizard,
 ];

@@ -3,6 +3,7 @@ import cleric from './cleric';
 import druid from './druid';
 import sorcerer from './sorcerer';
 import warlock from './warlock';
+import wizard from './wizard';
 
 export default {
   bard,
@@ -10,4 +11,5 @@ export default {
   druid,
   sorcerer,
   warlock,
+  wizard,
 };
