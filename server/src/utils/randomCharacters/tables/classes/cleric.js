@@ -61,7 +61,7 @@ const getEquipment = ({ rollOnArray }) => [
     armor.heavy[1],
   ]),
   rollOnArray([
-    `${ranged.simple[1]} and 20 bolts`,
+    `${ranged.simple[1]}; 20 bolts`,
     rollOnArray([...melee.simple, ...ranged.simple]),
   ]),
   ...rollOnArray([
