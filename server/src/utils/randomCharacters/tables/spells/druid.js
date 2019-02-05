@@ -14,8 +14,8 @@ const firstLevel = [
   'Charm Person',
   'Create or Destroy Water',
   'Cure Wounds',
-  'Detect Magic',
-  'Detect Poison and Disease',
+  'Detect Magic ®',
+  'Detect Poison and Disease ®',
   'Entangle',
   'Faerie Fire',
   'Fog Cloud',
@@ -23,8 +23,8 @@ const firstLevel = [
   'Healing Word',
   'Jump',
   'Longstrider',
-  'Purify Food and Drink',
-  'Speak with Animals',
+  'Purify Food and Drink ®',
+  'Speak with Animals ®',
   'Thunderwave',
 ];
 

@@ -1,0 +1,46 @@
+const cantrips = [
+  'Acid Splash',
+  'Blade Ward',
+  'Chill Touch',
+  'Dancing Lights',
+  'Fire Bolt',
+  'Friends',
+  'Light',
+  'Mage Hand',
+  'Mending',
+  'Message',
+  'Minor Illusion',
+  'Poison Spray',
+  'Prestidigitation',
+  'Ray of Frost',
+  'Shocking Grasp',
+  'True Strike',
+];
+
+const firstLevel = [
+  'Burning Hands',
+  'Charm Person',
+  'Chromatic Orb',
+  'Color Spray',
+  'Comprehend Languages',
+  'Detect Magic',
+  'Disguise Self',
+  'Expeditious Retreat',
+  'False Life',
+  'Feather Fall',
+  'Fog Cloud',
+  'Jump',
+  'Mage Armor',
+  'Magic Missile',
+  'Ray of Sickness',
+  'Shield',
+  'Silent Image',
+  'Sleep',
+  'Thunderwave',
+  'Witchbolt',
+];
+
+export default {
+  cantrips,
+  firstLevel,
+};
