@@ -10,9 +10,25 @@ const statPrefs = [
   ['CHA', 'CON', 'WIS', 'INT', 'DEX', 'STR'],
 ];
 
+const hitDice = '1d6';
+const hitPoints = 6;
+
+const classSkills = [];
+
+const classProficiencies = {};
+
+const classFeatures = [];
+
+const getEquipment = ({ rollOnArray }) => {};
+
 export default {
   className,
   statPrefs,
+  hitDice,
+  hitPoints,
+  classSkills,
+  classProficiencies,
+  classFeatures,
   generateRandom: (abilityScores) => {
     const { optimizeAbilityScores } = utils;
     const optimizedAbilityScores = optimizeAbilityScores({ abilityScores, statPrefs });
