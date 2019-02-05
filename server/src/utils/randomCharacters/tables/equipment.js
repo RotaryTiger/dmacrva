@@ -52,12 +52,12 @@ const weapons = {
 
 const armor = {
   light: [
-    'Padded (AC 11 + DEX, Disadvantage on Stealth checks)',
-    'Leather (AC 11 + DEX)',
-    'Studded Leather (AC 12 + DEX)',
+    'Padded Armor (AC 11 + DEX, Disadvantage on Stealth checks)',
+    'Leather Armor (AC 11 + DEX)',
+    'Studded Leather Armor (AC 12 + DEX)',
   ],
   medium: [
-    'Hide (AC 12 + DEX [max 2])',
+    'Hide Armor (AC 12 + DEX [max 2])',
     'Chain Shirt (AC 13 + DEX [max 2])',
     'Scale Mail (AC 14 + DEX [max 2], Disadvantage on Stealth checks)',
     'Breastplate (AC 14 + DEX [max 2])',

@@ -36,12 +36,26 @@ export default {
   classProficiencies,
   classFeatures,
   generateRandom: (abilityScores) => {
-    const { optimizeAbilityScores } = utils;
-    const optimizedAbilityScores = optimizeAbilityScores({ abilityScores, statPrefs });
+    const {
+      rollOnArray,
+      getUniqueEntries,
+      optimizeAbilityScores,
+    } = utils;
+
+    const abilities = optimizeAbilityScores({ abilityScores, statPrefs });
+    const proficiencies = {
+      ...classProficiencies,
+      skills: getUniqueEntries(),
+    };
 
     return {
       className,
-      optimizedAbilityScores,
+      abilities,
+      hitDice,
+      hitPoints,
+      proficiencies,
+      classFeatures,
+      equipment: getEquipment({ rollOnArray }),
     };
   },
 };
