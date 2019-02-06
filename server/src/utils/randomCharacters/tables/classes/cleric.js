@@ -1,7 +1,10 @@
+import { map, without } from 'underscore';
+
 import utils from '../../utils';
 import equipment from '../equipment';
 import spells from '../spells';
 import domains from './domains';
+import languages from '../languages';
 
 const { weapons, packs, armor } = equipment;
 const { melee, ranged } = weapons;
@@ -72,6 +75,87 @@ const getEquipment = ({ rollOnArray }) => [
   'Holy Symbol',
 ];
 
+const getCantrips = ({ getUniqueEntries, domain }) => {
+  const { domainName } = domain;
+  const threeCantrips = getUniqueEntries(3, cantrips);
+  if (domainName === 'Arcana') {
+    return [
+      ...threeCantrips,
+      ...getUniqueEntries(2, spells.wizard.cantrips),
+    ];
+  }
+
+  if (domainName === 'Light') {
+    return threeCantrips.indexOf('Light') === -1
+      ? [...threeCantrips, 'Light']
+      : threeCantrips;
+  }
+
+  if (domainName === 'Nature') {
+    return [
+      ...threeCantrips,
+      ...getUniqueEntries(1, spells.druid.cantrips),
+    ];
+  }
+
+  return threeCantrips;
+};
+
+const getSkills = ({ getUniqueEntries, domain }) => {
+  const twoSkills = getUniqueEntries(2, classSkills);
+
+  if (domain.domainName === 'Arcana') {
+    return [
+      ...twoSkills,
+      'Arcana',
+    ];
+  }
+
+  if (domain.domainName === 'Knowledge') {
+    const takenSkillsRemoved = without(['Arcana', 'History', 'Nature', 'Religion'], ...twoSkills);
+    const knowledgeSkills = getUniqueEntries(2, takenSkillsRemoved);
+
+    return [
+      ...twoSkills,
+      ...map(knowledgeSkills, kSkill => `${kSkill} (Expertise)`),
+    ];
+  }
+
+  if (domain.domainName === 'Nature') {
+    const takenSkillsRemoved = without(['Animal Handling', 'Nature', 'Survival'], ...twoSkills);
+    const natureSkills = getUniqueEntries(1, takenSkillsRemoved);
+
+    return [
+      ...twoSkills,
+      ...natureSkills,
+    ];
+  }
+
+  return twoSkills;
+};
+
+const getLanguages = ({ getUniqueEntries, domain }) => (
+  domain.domainName === 'Knowledge'
+    ? getUniqueEntries(2, languages)
+    : []
+);
+
+const getArmors = ({ domain }) => {
+  const { domainName } = domain;
+
+  return ['Life', 'Nature', 'Tempest', 'War'].indexOf(domainName) >= 0
+    ? ['Light', 'Medium', 'Heavy', 'Shields']
+    : ['Light', 'Medium', 'Shields'];
+};
+
+const getWeapons = ({ domain }) => {
+  const { domainName } = domain;
+
+  return ['Tempest', 'War'].indexOf(domainName) >= 0
+    ? ['Simple', 'Martial']
+    : ['Simple'];
+};
+
 export default {
   className,
   statPrefs,
@@ -87,12 +171,15 @@ export default {
       optimizeAbilityScores,
     } = utils;
 
+    const domain = rollOnArray(domains);
     const abilities = optimizeAbilityScores({ abilityScores, statPrefs });
     const proficiencies = {
       ...classProficiencies,
-      skills: getUniqueEntries(2, classSkills),
+      armor: getArmors({ domain }),
+      skills: getSkills({ getUniqueEntries, domain }),
+      weapons: getWeapons({ domain }),
+      languages: getLanguages({ getUniqueEntries, domain }),
     };
-    const domain = rollOnArray(domains);
 
     return {
       className,
@@ -106,7 +193,7 @@ export default {
       ],
       equipment: getEquipment({ rollOnArray }),
       spells: {
-        cantrips: getUniqueEntries(3, cantrips),
+        cantrips: getCantrips({ getUniqueEntries, domain }),
         firstLevel,
       },
     };

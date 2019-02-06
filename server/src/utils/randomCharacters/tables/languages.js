@@ -1,4 +1,5 @@
 export default [
+  'Common',
   'Gerudo',
   'Goron',
   'Hylian',

@@ -7,7 +7,7 @@ const domainFeatures = [
   },
   {
     name: 'Blessings of Knowledge',
-    description: 'You learn two languages of your choice (your character sheet does not reflect these). You become proficient in two of the following skills: Arcana, History, Nature, Religion (your character sheet does not reflect this). Your proficiency bonus is doubled for any ability check you make that uses either of those skills.',
+    description: 'You learn two languages. You become proficient in two of the following skills: Arcana, History, Nature, Religion. Your proficiency bonus is doubled for any ability check you make that uses either of those skills.',
   },
 ];
 

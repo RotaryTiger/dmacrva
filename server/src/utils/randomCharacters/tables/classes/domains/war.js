@@ -11,7 +11,7 @@ const domainFeatures = [
   },
   {
     name: 'Bonus Proficiencies',
-    description: 'You gain proficiency with Martial weapons and Heavy armor (your character sheet does not reflect these).',
+    description: 'You gain proficiency with Martial weapons and Heavy armor.',
   },
 ];
 

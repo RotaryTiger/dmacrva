@@ -70,11 +70,15 @@ const getPatron = ({ rollOnArray }) => {
   const archfey = [
     {
       name: 'Otherworldly Patron: Archfey',
-      description: '',
+      description: 'You have made a pact with a Lord or Lady of the fey, a creature of legends who holds secrets that were forgotten before the mortal races were born. This being\'s aims are inscrutable, sometimes whimsical, and might involve a striving for greater magical power or the settling of age old grudges.',
     },
     {
       name: 'Expanded Spell List',
-      description: 'Your Warlock spell list includes the spells .',
+      description: 'Your Warlock spell list includes the spells Faerie Fire and Sleep.',
+    },
+    {
+      name: 'Fey Presence',
+      description: 'Once per Short or Long rest: [Action] You cause each creature within a 10ft square originating from you to make a Wisdom saving throw against your Warlock spell save DC. The creatures that fail are charmed or frightened by you (your choice) until the end of your next turn.',
     },
   ];
   const fiend = [
@@ -94,11 +98,29 @@ const getPatron = ({ rollOnArray }) => {
   const greatOldOne = [
     {
       name: 'Otherworldly Patron: Great Old One',
-      description: '',
+      description: 'Your patron is a mysterious entity whose nature is utterly foreign to the fabric of reality. It might come from the Far Realm, the space beyond reality, or it could be one of the elder gods known only in legends. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds.',
     },
     {
       name: 'Expanded Spell List',
-      description: 'Your Warlock spell list includes the spells .',
+      description: 'Your Warlock spell list includes the spells Dissonant Whispers and Tasha\'s Hideous Laughter.',
+    },
+    {
+      name: 'Awakened Mind',
+      description: 'You can telepathically speak to any creature you can see within 30ft of you. You do not need to hsare a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.',
+    },
+  ];
+  const theUndying = [
+    {
+      name: 'Otherworldly Patron: The Undying',
+      description: 'Death holds no sway over your patron, who has unlocked the secrets of everlasting life, although such a prize—like all power—comes at a price.',
+    },
+    {
+      name: 'Expanded Spell List',
+      description: 'Your Warlock spell list includes the spells False Life and Ray of Sickness.',
+    },
+    {
+      name: 'Among the Dead',
+      description: 'You learn the Spare the Dying cantrip, which counts as a Warlock cantrip for you. You have Advantage on saving throws against diseases. If an undead targets you directly with an attack or a harmful spell, that creature must make a Wisdom saving throw against your spell save DC. On a failed save, the creature must choose a new target or forfeit targeting someone instead of you, potentially wasting the attack or spell. On a successful save, the creature is immune to this effect for 24 hours. An undead is also immune to this spell if you target it with an attack or harmful spell.',
     },
   ];
 
@@ -107,16 +129,22 @@ const getPatron = ({ rollOnArray }) => {
       archfey,
       fiend,
       greatOldOne,
+      theUndying,
     ]),
     expandedSpells: {
-      'Otherworldly Patron: Archfey': [],
+      'Otherworldly Patron: Archfey': ['Faerie Fire', 'Sleep'],
       'Otherworldly Patron: Fiend': ['Burning Hands', 'Command'],
-      'Otherworldly Patron: Great Old One': [],
+      'Otherworldly Patron: Great Old One': ['Dissonant Whispers', 'Tasha\'s Hideous Laughter'],
+      'Otherworldly Patron: The Undying': ['False Life', 'Ray of Sickness'],
     },
   };
 };
 
-// TODO: Otherworldly Patrons
+const getWarlockCantrips = ({ getUniqueEntries, patron }) => (
+  patron[0].name === 'Otherworldly Patron: The Undying'
+    ? [...getUniqueEntries(2, cantrips), 'Spare the Dying']
+    : getUniqueEntries(2, cantrips)
+);
 
 export default {
   className,
@@ -152,7 +180,7 @@ export default {
       ],
       equipment: getEquipment({ rollOnArray }),
       spells: {
-        cantrips: getUniqueEntries(2, cantrips),
+        cantrips: getWarlockCantrips({ getUniqueEntries, patron }),
         firstLevel: getUniqueEntries(2, [...firstLevel, ...expandedSpells[patron[0].name]]),
       },
     };

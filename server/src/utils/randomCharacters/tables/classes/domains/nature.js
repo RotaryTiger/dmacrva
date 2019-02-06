@@ -7,11 +7,11 @@ const domainFeatures = [
   },
   {
     name: 'Acolyte of Nature',
-    description: 'You learn one Druid cantrip of your choice. You gain proficiency in one of the following skills: Animal Handling, Nature, Survival (your character sheet does not reflect these).',
+    description: 'You learn one Druid cantrip of your choice. You gain proficiency in one of the following skills: Animal Handling, Nature, Survival.',
   },
   {
     name: 'Bonus Proficiency',
-    description: 'You gain proficiency with Heavy armor (your character sheet does not reflect this).',
+    description: 'You gain proficiency with Heavy armor.',
   },
 ];
 
