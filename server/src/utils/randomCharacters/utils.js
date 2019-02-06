@@ -1,21 +1,11 @@
 import { object, uniq, mapObject, intersection } from 'underscore';
 import tables from './tables';
 
-const rollOnArray = array => array[Math.floor(Math.random() * array.length)];
+const rollOnArray = (array) => {
+  if (!array || array.length === 0) return [];
+  return array[Math.floor(Math.random() * array.length)];
+};
 const rollOnTable = table => rollOnArray(tables[table]);
-// const rollOnArray = (array) => {
-//   const rando = Math.random();
-//   console.log({ rando });
-//   const floor = Math.floor(rando * array.length);
-//   console.log({ floor });
-//   return array[floor];
-// };
-// const rollOnTable = (table) => {
-//   console.log({ table });
-//   const roll = rollOnArray(tables[table]);
-//   console.log({ roll });
-//   return roll;
-// };
 
 const getMod = score => Math.floor((score - 10) / 2);
 const getMods = scores => mapObject(scores, score => ({ score, mod: getMod(score) }));

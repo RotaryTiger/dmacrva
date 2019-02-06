@@ -1,5 +1,6 @@
 import getClass from './getClass';
 import getRace from './getRace';
+import getBackground from './getBackground';
 import utils from './utils';
 
 const { rollOnTable } = utils;
@@ -27,7 +28,7 @@ const createRandomCharacter = () => {
     formattedAbilityScores,
   } = characterRace;
 
-  return {
+  const character = getBackground({
     raceName,
     className,
     hitDice,
@@ -41,7 +42,9 @@ const createRandomCharacter = () => {
     proficiencies,
     equipment,
     spells,
-  };
+  });
+
+  return character;
 };
 
 export default createRandomCharacter;
