@@ -6,11 +6,14 @@ const cantrips = [
   'Sacred Flame',
   'Spare the Dying',
   'Thaumaturgy',
+  'Toll the Dead (XGtE)',
+  'Word of Radiance (XGtE)',
 ];
 
 const firstLevel = [
   'Bane',
   'Bless',
+  'Ceremony ® (XGtE)',
   'Command',
   'Create or Destroy Water',
   'Cure Wounds',

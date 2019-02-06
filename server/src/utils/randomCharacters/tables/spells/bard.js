@@ -8,6 +8,7 @@ const cantrips = [
   'Message',
   'Minor Illusion',
   'Prestidigitation',
+  'Thunderclap (XGtE)',
   'True Strike',
   'Vicious Mockery',
 ];
@@ -21,6 +22,7 @@ const firstLevel = [
   'Detect Magic ®',
   'Disguise Self',
   'Dissonant Whispers',
+  'Earth Tremor (XGtE)',
   'Faerie Fire',
   'Feather Fall',
   'Healing Word',
