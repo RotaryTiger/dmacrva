@@ -116,6 +116,12 @@ const tools = {
     'Shawm',
     'Viol',
   ],
+  gaming: [
+    'Dice set',
+    'Dragonchess set',
+    'Playing card set',
+    'Three-Dragon ante set',
+  ],
 };
 
 const packs = {

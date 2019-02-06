@@ -1,9 +1,9 @@
-import acolyte from './acolyte';
+// import acolyte from './acolyte';
 // import charlatan from './charlatan';
 // import criminal from './criminal';
 // import entertainer from './entertainer';
 // import folkHero from './folkHero';
-// import gladiator from './gladiator';
+import gladiator from './gladiator';
 // import guildArtisan from './guildArtisan';
 // import guildMerchant from './guildMerchant';
 // import hermit from './hermit';
@@ -18,12 +18,12 @@ import acolyte from './acolyte';
 // import urchin from './urchin';
 
 export default [
-  acolyte,
+  // acolyte,
   // charlatan,
   // criminal,
   // entertainer,
-  // gladiator,
   // folkHero,
+  gladiator,
   // guildArtisan,
   // guildMerchant,
   // hermit,
