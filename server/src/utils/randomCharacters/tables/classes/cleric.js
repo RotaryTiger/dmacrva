@@ -85,6 +85,12 @@ const getCantrips = ({ getUniqueEntries, domain }) => {
     ];
   }
 
+  if (domainName === 'Grave') {
+    return threeCantrips.indexOf('Spare the Dying') >= 0
+      ? [...threeCantrips, ...getUniqueEntries(1, without(cantrips, 'Spare the Dying'))]
+      : [...threeCantrips, 'Spare the Dying'];
+  }
+
   if (domainName === 'Light') {
     return threeCantrips.indexOf('Light') === -1
       ? [...threeCantrips, 'Light']
@@ -143,7 +149,7 @@ const getLanguages = ({ getUniqueEntries, domain }) => (
 const getArmors = ({ domain }) => {
   const { domainName } = domain;
 
-  return ['Life', 'Nature', 'Tempest', 'War'].indexOf(domainName) >= 0
+  return ['Forge', 'Life', 'Nature', 'Tempest', 'War'].indexOf(domainName) >= 0
     ? ['Light', 'Medium', 'Heavy', 'Shields']
     : ['Light', 'Medium', 'Shields'];
 };
@@ -154,6 +160,14 @@ const getWeapons = ({ domain }) => {
   return ['Tempest', 'War'].indexOf(domainName) >= 0
     ? ['Simple', 'Martial']
     : ['Simple'];
+};
+
+const getTools = ({ domain }) => {
+  const { domainName } = domain;
+
+  return domainName === 'Forge'
+    ? ['Smith\'s tools']
+    : [];
 };
 
 export default {
@@ -175,6 +189,7 @@ export default {
     const abilities = optimizeAbilityScores({ abilityScores, statPrefs });
     const proficiencies = {
       ...classProficiencies,
+      tools: getTools({ domain }),
       armor: getArmors({ domain }),
       skills: getSkills({ getUniqueEntries, domain }),
       weapons: getWeapons({ domain }),
