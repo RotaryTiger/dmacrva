@@ -33,6 +33,7 @@ const randomizeFromKeyword = ({ value, source, exclude }) => {
   if (value === 'random') return rollOnArray(without(source, ...exclude));
   if (value === 'instrument') return rollOnArray(without(tools.instruments, ...exclude));
   if (value === 'gaming') return rollOnArray(without(tools.gaming, ...exclude));
+  if (value === 'artisans') return rollOnArray(without(tools.artisans, ...exclude));
   if (value) return value;
 
   return rollOnArray(without(source, ...exclude));
