@@ -19,7 +19,7 @@ const proficiencies = {
   tools: [],
   skills: [],
   saves: [],
-  languages: ['Common', 'Hylian'],
+  languages: ['Hylian (Common)'],
 };
 
 const speed = 30;

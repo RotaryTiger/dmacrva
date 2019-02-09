@@ -25,7 +25,7 @@ const proficiencies = {
   tools: [],
   skills: [],
   saves: [],
-  languages: ['Common', 'Rito'],
+  languages: ['Hylian (Common)', 'Rito'],
 };
 const speed = 25;
 const size = 'Medium';
