@@ -1,6 +1,7 @@
 import getClass from './getClass';
 import getRace from './getRace';
 import getBackground from './getBackground';
+import getDerivedValues from './getDerivedValues';
 import utils from './utils';
 
 const { rollOnTable } = utils;
@@ -17,6 +18,7 @@ const createRandomCharacter = () => {
     equipment,
     spells,
   } = characterClass;
+
   const {
     raceName,
     hitPoints,
@@ -25,6 +27,7 @@ const createRandomCharacter = () => {
     speed,
     size,
     alignment,
+    abilityScores,
     formattedAbilityScores,
   } = characterRace;
 
@@ -36,6 +39,7 @@ const createRandomCharacter = () => {
     speed,
     size,
     alignment,
+    abilityScores,
     formattedAbilityScores,
     racialFeatures,
     classFeatures,
@@ -44,7 +48,9 @@ const createRandomCharacter = () => {
     spells,
   });
 
-  return character;
+  const derivedValues = getDerivedValues(character);
+
+  return derivedValues;
 };
 
 export default createRandomCharacter;

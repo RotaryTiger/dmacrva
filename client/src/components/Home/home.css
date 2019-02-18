@@ -75,6 +75,7 @@ a:visited {
 
 .thing {
   font-size: 24px;
+  text-align: center;
 }
 
 .footer-text {
@@ -84,7 +85,7 @@ a:visited {
 }
 
 /* @media screen and (max-width: ) */
-@media screen and (max-width: 926px) {
+/* @media screen and (max-width: 926px) {
   .home-title {
     padding-top: 24px;
     line-height: 164px;
@@ -130,4 +131,4 @@ a:visited {
   .footer-text {
     position: relative;
   }
-}
+} */
