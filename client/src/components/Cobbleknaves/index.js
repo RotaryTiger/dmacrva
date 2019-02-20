@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Abilities from './Abilities';
-
 import './cobbleknaves.css';
 
 class Cobbleknaves extends Component {
@@ -34,7 +32,6 @@ class Cobbleknaves extends Component {
     const { random } = this.state;
     return (
       <div className="knave">
-        <Abilities props={random.abilityScores} />
         <pre>{ JSON.stringify(random, null, 4) }</pre>
       </div>
     );
