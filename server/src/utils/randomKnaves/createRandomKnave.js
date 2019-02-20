@@ -9,7 +9,7 @@ export default () => {
   const equipment = getEquipment();
   const traits = getTraits();
   const hitPoints = getHitPoints();
-  const armor = getArmor(equipment);
+  const armor = getArmor(equipment.armor);
 
   return {
     abilityScores,

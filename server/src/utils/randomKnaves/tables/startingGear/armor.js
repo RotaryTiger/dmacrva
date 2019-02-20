@@ -6,6 +6,7 @@ const armors = [
     quality: 0,
     slots: 0,
     cost: 0,
+    type: 'armor',
     name: 'No Armor',
   },
   {
@@ -13,6 +14,7 @@ const armors = [
     quality: 3,
     slots: 1,
     cost: 60,
+    type: 'armor',
     name: 'Gambeson',
   },
   {
@@ -20,6 +22,7 @@ const armors = [
     quality: 4,
     slots: 2,
     cost: 500,
+    type: 'armor',
     name: 'Brigandine',
   },
   {
@@ -27,6 +30,7 @@ const armors = [
     quality: 5,
     slots: 3,
     cost: 1200,
+    type: 'armor',
     name: 'Chain',
   },
   {
@@ -34,6 +38,7 @@ const armors = [
     quality: 6,
     slots: 4,
     cost: 4000,
+    type: 'armor',
     name: 'Half Plate',
   },
   {
@@ -41,6 +46,7 @@ const armors = [
     quality: 7,
     slots: 5,
     cost: 8000,
+    type: 'armor',
     name: 'Plate',
   },
 ];

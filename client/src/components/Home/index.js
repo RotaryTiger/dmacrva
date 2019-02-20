@@ -5,25 +5,21 @@ import './home.css';
 
 const Home = () => (
   <div className="container-fluid">
-    <div className="row justify-content-center">
-      <h1 className="home-title pacifico">Daniel MacPhee</h1>
-    </div>
-    <div className="row">
-      <div className="col-sm-12">
-        <hr className="home-title-divider" />
-      </div>
-      <div className="col-sm-12">
-        <p className="home-subtitle">A website with some stuff I've done</p>
+    <div className="row align-items-end thing-container">
+      <div className="col thing first-thing plex">
+        <Link to="/breath-marches">
+          Breath
+          <br />
+          Marches
+        </Link>
       </div>
     </div>
-
-    <div className="row">
-      <Link
-        className="thing col-lg-4 offset-lg-4 col-md-6 offset-md-3"
-        to="/breath-marches"
-      >
-        Like this Breath Marches character generator, for instance
-      </Link>
+    <div className="row align-items-start thing-container">
+      <div className="col-sm-12 thing second-thing plex">
+        <Link to="/cobbleknaves">
+          Cobbleknaves
+        </Link>
+      </div>
     </div>
 
     <footer className="dark footer-text">© Daniel 2019</footer>

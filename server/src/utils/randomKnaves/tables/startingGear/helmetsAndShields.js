@@ -6,6 +6,7 @@ const armors = [
     quality: 1,
     slots: 1,
     cost: 40,
+    type: 'helmet',
     name: 'Helmet',
   },
   {
@@ -13,6 +14,7 @@ const armors = [
     quality: 1,
     slots: 1,
     cost: 40,
+    type: 'shield',
     name: 'Shield',
   },
 ];

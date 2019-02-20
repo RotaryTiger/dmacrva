@@ -1,18 +1,9 @@
 import { find } from 'underscore';
 
-const armors = [
-  'No Armor',
-  'Gambeson',
-  'Brigandine',
-  'Chain',
-  'Half Plate',
-  'Plate',
-];
-
 const parseEquipment = equipment => ({
-  armor: find(equipment, item => armors.indexOf(item.name) >= 0),
-  shield: find(equipment, item => item.name === 'Shield'),
-  helmet: find(equipment, item => item.name === 'Helmet'),
+  armor: find(equipment, item => item.type === 'armor'),
+  shield: find(equipment, item => item.type === 'shield'),
+  helmet: find(equipment, item => item.type === 'helmet'),
 });
 
 const parseArmor = ({ armor, shield, helmet }) => {

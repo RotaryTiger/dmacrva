@@ -29,6 +29,8 @@ const nameCategories = {
 const categories = {
   light: (category, rollOnArray) => ({
     name: rollOnArray(nameCategories[category]),
+    type: 'weapon',
+    subtype: 'melee',
     damage: 'd6',
     slots: 1,
     hands: 1,
@@ -36,6 +38,8 @@ const categories = {
   }),
   medium: (category, rollOnArray) => ({
     name: rollOnArray(nameCategories[category]),
+    type: 'weapon',
+    subtype: 'melee',
     damage: 'd8',
     slots: 2,
     hands: 1,
@@ -43,6 +47,8 @@ const categories = {
   }),
   heavy: (category, rollOnArray) => ({
     name: rollOnArray(nameCategories[category]),
+    type: 'weapon',
+    subtype: 'melee',
     damage: 'd10',
     slots: 3,
     hands: 2,
@@ -50,6 +56,8 @@ const categories = {
   }),
   sling: () => ({
     name: 'Sling',
+    type: 'weapon',
+    subtype: 'ranged',
     damage: 'd4',
     slots: 1,
     hands: 1,
@@ -57,6 +65,8 @@ const categories = {
   }),
   bow: () => ({
     name: 'Bow',
+    type: 'weapon',
+    subtype: 'ranged',
     damage: 'd6',
     slots: 2,
     hands: 2,
@@ -64,6 +74,8 @@ const categories = {
   }),
   crossbow: () => ({
     name: 'Crossbow',
+    type: 'weapon',
+    subtype: 'ranged',
     damage: 'd8',
     slots: 3,
     hands: 2,
