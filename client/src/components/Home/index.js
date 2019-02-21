@@ -1,29 +1,97 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import './home.css';
 
-const Home = () => (
-  <div className="container-fluid">
-    <div className="row align-items-end thing-container">
-      <div className="col thing first-thing plex">
-        <Link to="/breath-marches">
-          Breath
-          <br />
-          Marches
-        </Link>
-      </div>
-    </div>
-    <div className="row align-items-start thing-container">
-      <div className="col-sm-12 thing second-thing plex">
-        <Link to="/cobbleknaves">
-          Cobbleknaves
-        </Link>
-      </div>
-    </div>
+class Home extends Component {
+  constructor() {
+    super();
 
-    <footer className="dark footer-text">© Daniel 2019</footer>
-  </div>
-);
+    const styles = [
+      {
+        backgroundImage: 'linear-gradient(to right, rgba(100, 182, 172, 1), rgba(218, 255, 239, 1))',
+        color: 'rgba(255, 255, 239, 1)',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, rgba(216, 30, 91, 1), rgba(235, 94, 85, 1))',
+        color: 'rgba(255, 94, 85, 1)',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #52154E, #F9CFF2)',
+        color: '#F9CFF2',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #F28482, #F5CAC3)',
+        color: '#F5CAC3',
+      },
+    ];
+
+    this.state = {
+      styles,
+      activeStyle: Math.floor(Math.random() * styles.length),
+    };
+
+    this.getNewStyle = this.getNewStyle.bind(this);
+  }
+
+  getNewStyle(event) {
+    event.preventDefault();
+
+    const { styles, activeStyle } = this.state;
+    const getRandomNumber = (bannedNumber) => {
+      const randomNumber = Math.floor(Math.random() * styles.length);
+
+      if (randomNumber === bannedNumber) {
+        return getRandomNumber(bannedNumber);
+      }
+
+      return randomNumber;
+    };
+
+    const newActiveStyle = getRandomNumber(activeStyle);
+
+    console.log({ activeStyle });
+
+    this.setState({
+      activeStyle: newActiveStyle,
+    });
+  }
+
+  render() {
+    const { styles, activeStyle } = this.state;
+    const { backgroundImage, color } = styles[activeStyle];
+
+    return (
+      <div style={{ backgroundImage }} className="container">
+        <div className="thing-container">
+          <button
+            id="dmacrva"
+            type="button"
+            onClick={this.getNewStyle}
+            style={{ color }}
+          >
+            dmacrva
+          </button>
+          <div className="thing-padding" />
+
+          <div className="thing first-thing plex">
+            <Link to="/breath-marches" style={{ color }}>
+              Breath
+              <br />
+              Marches
+            </Link>
+          </div>
+
+          <div className="thing second-thing plex">
+            <Link to="/cobbleknaves" style={{ color }}>
+              Cobbleknaves
+            </Link>
+          </div>
+
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Home;

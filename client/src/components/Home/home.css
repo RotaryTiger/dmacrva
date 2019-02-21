@@ -1,23 +1,17 @@
-/* RGB */
-/*
-$color1: rgba(235, 94, 85, 1);
-$color2: rgba(58, 51, 53, 1);
-$color3: rgba(216, 30, 91, 1);
-$color4: rgba(253, 240, 213, 1);
-$color5: rgba(198, 216, 211, 1);
-*/
-
 body {
   margin: 0px;
   font-family: 'Alegreya', serif;
-  color: rgba(253, 240, 213, 1);
-  background-image: linear-gradient(to right, rgba(216, 30, 91, 1), rgba(235, 94, 85, 1));
-  background-color: rgba(216, 30, 91, 1);
+  color: rgba(93, 115, 126, 1);
+  background-color: rgba(252, 255, 253, 1);
 }
 
-/* a:hover {
-  font-style: italic;
-} */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 .dark {
   color: rgba(58, 51, 53, 1);
@@ -37,18 +31,38 @@ body {
 }
 
 .container {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
+  background-image: linear-gradient(to right, #52154E, #F9CFF2);
 }
 
 .thing-container {
-  height: 50vh;
+  padding-top: 24px;
+  padding-left: 24px;
+  transition: background-image 2s linear;
+}
+
+#dmacrva {
+  color: rgba(255, 255, 255, 1);
+  background: transparent;
+  border: none;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 12px;
+}
+
+#dmacrva:focus {
+  outline: none;
+}
+
+.thing-padding {
+  height: 25vh;
 }
 
 .thing, .thing a {
   font-size: 64px;
   line-height: 64px;
-  color: rgba(235, 94, 85, 1);
+  /* color: rgba(255, 94, 85, 1); */
+  color: rgba(255, 255, 239, 1);
 }
 
 .first-thing, .first-thing a {
@@ -59,10 +73,4 @@ body {
 .second-thing, .second-thing a {
   /* background-color: green; */
   padding-top: 24px;
-}
-
-.footer-text {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
 }
