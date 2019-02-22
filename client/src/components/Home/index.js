@@ -29,8 +29,16 @@ class Home extends Component {
         color: '#F5CAC3',
       },
       {
-        backgroundImage: 'linear-gradient(to right, #DBD9DB, #45503B)',
-        color: '#45503B',
+        backgroundImage: 'linear-gradient(to right, #D11149, #6610F2)',
+        color: '#7620F6',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #69140E, #FFFB46)',
+        color: '#FFFF66',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #E6C229, #F17105)',
+        color: '#F58115',
       },
       {
         backgroundImage: 'linear-gradient(to right, #824C71, #DCCCA3)',
