@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '..', '..', 'client', 'build')));
 app.use('/api', routes);
 
 app.get('/*', (request, response) => {
-  const file = path.join(__dirname, '..', 'client', 'build', 'index.html');
+  const file = path.join(__dirname, '..', '..', 'client', 'build', 'index.html');
   return response.status(200).sendFile(file);
 });
 
