@@ -24,6 +24,22 @@ class Home extends Component {
         backgroundImage: 'linear-gradient(to right, #F28482, #F5CAC3)',
         color: '#F5CAC3',
       },
+      {
+        backgroundImage: 'linear-gradient(to right, #F374AE, #E6B89C)',
+        color: '#F5CAC3',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #DBD9DB, #45503B)',
+        color: '#45503B',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #824C71, #DCCCA3)',
+        color: '#DCCCA3',
+      },
+      {
+        backgroundImage: 'linear-gradient(to right, #AFE3C0, #8963BA)',
+        color: '#9973CA',
+      },
     ];
 
     this.state = {
