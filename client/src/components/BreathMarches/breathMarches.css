@@ -1,5 +1,198 @@
-.breath {
-  background-color: rgba(252, 255, 253, 1);
-  color: rgba(93, 115, 126, 1);
-  height: 100%;
+body {
+  font-family: sans-serif;
+}
+
+a {
+  color: #000;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3, .hitpoints input {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 10px;
+}
+
+.app > * {
+  margin-bottom: 16px;
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.row > * {
+  padding: 0 10px;
+}
+.row > .row {
+  margin: 0 -16px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col-3 {
+  flex: 1 0 25%;
+}
+.col-4 {
+  flex: 1 0 33.3333%;
+}
+.col-8 {
+  flex: 1 0 66.6667%;
+}
+
+.flex-expand {
+  flex: 1 0;
+}
+
+.flex-shrink, .bubble-inner {
+  display: inline-block;
+  flex: 0 1;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.p-8, .bubble-inner {
+  padding: 8px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bordered, .card, .smcard, .header, .bubble-inner {
+  border: 2px solid #ddd;
+}
+
+.text-center, .score-card, .prof-score {
+  text-align: center;
+}
+
+.centered, .bubble, .bubble-inner {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded, .card, .smcard, .profile-image {
+  border-radius: 5px;
+}
+
+.round, .bubble-inner {
+  border-radius: 100%;
+}
+
+.bg, .card, .smcard, .header, .bubble-inner {
+  background: #eee;
+}
+
+.card, .smcard {
+  padding: 8px;
+}
+
+.header {
+  padding: 20px 0;
+}
+
+.smcard-top, .smcard-bottom {
+  position: relative;
+  z-index: 2;
+}
+.smcard-middle {
+  margin: 8px 0;
+  position: relative;
+}
+.smcard-middle span.sign {
+  position: absolute;
+}
+
+span.sign {
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  font-size: 80%;
+  color: grey;
+}
+
+.score-card {
+  min-width: 70px;
+}
+
+.bubble {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin-top: 8px;
+}
+.bubble-inner {
+  position: absolute;
+  min-width: 16px;
+  min-height: 16px;
+  bottom: -25px;
+}
+
+.hitpoints input {
+  background: transparent;
+  border: none;
+  display: inline-block;
+  width: 30px;
+}
+
+.hitpoints .fraction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.inspiration h3, .inspiration .hitpoints input, .hitpoints .inspiration input {
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 75px;
+  height: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
 }
