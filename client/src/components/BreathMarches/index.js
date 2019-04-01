@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
+import './reset.min.css';
 import './breathMarches.css';
+import Sheet from './components/Sheet';
 
 class BreathMarches extends Component {
   constructor() {
@@ -30,12 +33,12 @@ class BreathMarches extends Component {
 
   render() {
     const { random } = this.state;
-    return (
-      <div className="breath">
-        <pre>{ JSON.stringify(random, null, 4) }</pre>
-      </div>
-    );
+
+    if (!random) return null
+
+    return <Sheet toon={random}></Sheet>
   }
 }
+
 
 export default BreathMarches;
