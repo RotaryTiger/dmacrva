@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import skills from '../static/skills'
-import useLocalStorage from './useLocalStorage'
-import isEqual from 'react-fast-compare'
+import isEqual from 'react-fast-compare';
+import skills from '../static/skills';
+import useLocalStorage from './useLocalStorage';
 
 const Sheet = ({ toon }) => {
     // state
@@ -31,28 +32,31 @@ const Sheet = ({ toon }) => {
             console.log('local is same')
             return
         }
-        
+
         updateLocalSheet()
     }
     const propsDidUpdate = () => {
         setPcData(toon)
-        return 
-        
+        return
+
         console.log('toon updated', pcData)
         if (!pcData) {
             console.log('getting random character')
             setPcData(toon)
-            updateLocalSheet() 
+            updateLocalSheet()
         }
     }
 
     // didMount
     React.useEffect(() => {
+        if (!localSheet || !localSheet.pcData) {
+          return;
+        }
         console.log('mounted', localSheet.pcData)
         localSheet.pcData && setPcData(localSheet.pcData)
     }, [mount])
 
-    // didUpdates 
+    // didUpdates
     // React.useEffect(stateDidUpdate, [pcData])
     React.useEffect(propsDidUpdate, [toon])
 

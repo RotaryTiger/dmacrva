@@ -34,9 +34,9 @@ class BreathMarches extends Component {
   render() {
     const { random } = this.state;
 
-    if (!random) return null
+    if (!random) return null;
 
-    return <Sheet toon={random}></Sheet>
+    return <Sheet toon={random} />;
   }
 }
 
