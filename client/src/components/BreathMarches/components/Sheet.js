@@ -289,9 +289,6 @@ const RaceFeatures = ({ racialFeatures }) => (
 );
 
 const Feature = ({ name, description }) => {
-
-
-
     return (
         <div className="col mb-16">
             <a target="_blank" href={`https://dnd5e.fandom.com/wiki/Special:Search?query=${name}`}><h4 className="mb-8 bold">{name}</h4></a>
@@ -344,12 +341,41 @@ const SpellSlot = (props) => {
 /*Background*/
 const Background = ({ background }) => {
     const defaultValue = JSON.stringify(background, null, 2);
+    const {
+      trait,
+      ideal,
+      bond,
+      flaw,
+      others,
+      backgroundName,
+      backgroundFeature,
+    } = background;
+
+    let otherFeatures;
+    if (others && others.length > 0) {
+      otherFeatures = others.map((other, i) => {
+        const [name, description] = other.split(':');
+        return <Feature key={i} name={name} description={description} />
+      });
+    }
+
     return (
         <div className="background">
             <div className="card mb-16">
-                <h2>Background</h2>
+                <h2>Background: {backgroundName}</h2>
                 <hr />
-                <textarea defaultValue={defaultValue} />
+                <Feature name="Trait" description={trait} />
+                <Feature name="Ideal" description={ideal} />
+                <Feature name="Bond" description={bond} />
+                <Feature name="Flaw" description={flaw} />
+                { (otherFeatures && otherFeatures.length > 0) &&
+                  <div>
+                    <hr />
+                    {otherFeatures}
+                  </div>
+                }
+                <hr />
+                <Feature name={backgroundFeature.name} description={backgroundFeature.description} />
             </div>
         </div>
     )
