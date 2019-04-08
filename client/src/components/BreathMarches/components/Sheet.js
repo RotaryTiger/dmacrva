@@ -316,6 +316,8 @@ const SpellFeature = ({ name, description }) => {
       .replace('®', '')
       .replace('(C) ', '')
       .replace('(I) ', '')
+      .replace('Tasha\'s ', '')
+      .replace('Tenser\'s ', '')
       .replace(' ', '-')
       .trim();
     return (

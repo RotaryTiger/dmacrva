@@ -17,15 +17,15 @@ const racialFeatures = [
   },
   {
     name: 'Swim',
-    featureDescription: 'You have a swimming speed of 30 feet.',
+    description: 'You have a swimming speed of 30 feet.',
   },
   {
     name: 'Deep Sea Vision',
-    featureDescription: 'When underwater, you can see in dim light as though it were bright light, and in darkness as though it were dim light out to a distance of 60 feet. You can only see shades of gray this way.',
+    description: 'When underwater, you can see in dim light as though it were bright light, and in darkness as though it were dim light out to a distance of 60 feet. You can only see shades of gray this way.',
   },
   {
     name: 'Zora Immunity',
-    featureDescription: 'You have Advantage on saving throws against being charmed, and magic cannot put you to sleep',
+    description: 'You have Advantage on saving throws against being charmed, and magic cannot put you to sleep',
   },
 ];
 const proficiencies = {
