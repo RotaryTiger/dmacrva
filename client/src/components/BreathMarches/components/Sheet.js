@@ -109,7 +109,7 @@ const Sheet = ({ toon }) => {
             <div className="row">
                 <div className="col-3">
                     <Skills skills={skills} skillProfs={skillProfs} />
-                    <Spells spells={spells} spellSLots={spellSlots} />
+                    <Spells spells={spells} spellSlots={spellSlots} />
                 </div>
                 <div className="features col-8">
                     <Equipment equipment={equipment} />
@@ -291,7 +291,7 @@ const RaceFeatures = ({ racialFeatures }) => (
 const Feature = ({ name, description }) => {
     return (
         <div className="col mb-16">
-            <a target="_blank" href={`https://dnd5e.fandom.com/wiki/Special:Search?query=${name}`}><h4 className="mb-8 bold">{name}</h4></a>
+            <a target="_blank" href={`https://www.dndbeyond.com/search?q=${name}`}><h4 className="mb-8 bold">{name}</h4></a>
             <p>{description}</p>
         </div>
     )
@@ -310,12 +310,28 @@ const Equipment = ({ equipment }) => {
     )
 }
 
+const SpellFeature = ({ name, description }) => {
+  const spellName =
+    name.replace('(XGtE)', '')
+      .replace('®', '')
+      .replace('(C) ', '')
+      .replace('(I) ', '')
+      .replace(' ', '-')
+      .trim();
+    return (
+        <div className="col mb-16">
+            <a target="_blank" href={`https://www.dndbeyond.com/spells/${spellName}`}><h4 className="mb-8 bold">{name}</h4></a>
+            <p>{description}</p>
+        </div>
+    )
+};
+
 const Spells = ({ spells, spellSlots }) => spells ? (
     <div className="features-race">
         <div className="card mb-16">
             <h2>Spells</h2>
             <hr />
-            {spells.cantrips.map((spell, i) => <Feature name={`(C) ${spell}`} key={i} />)}
+            {spells.cantrips.map((spell, i) => <SpellFeature name={`(C) ${spell}`} key={i} />)}
             <hr />
             <div className="row">
                 <span>Spell Slots: </span>
@@ -323,7 +339,7 @@ const Spells = ({ spells, spellSlots }) => spells ? (
                 <SpellSlot />
             </div>
             <hr />
-            {spells.firstLevel.map((spell, i) => <Feature name={`(I) ${spell}`} key={i} />)}
+            {spells.firstLevel.map((spell, i) => <SpellFeature name={`(I) ${spell}`} key={i} />)}
         </div>
     </div>
 ) : null
@@ -339,6 +355,14 @@ const SpellSlot = (props) => {
 }
 
 /*Background*/
+const BackgroundFeature = ({ name, description }) => {
+    return (
+        <div className="col mb-16">
+            <h4 className="mb-8 bold bg-h4">{name}</h4>
+            <p>{description}</p>
+        </div>
+    )
+};
 const Background = ({ background }) => {
     const defaultValue = JSON.stringify(background, null, 2);
     const {
@@ -355,7 +379,7 @@ const Background = ({ background }) => {
     if (others && others.length > 0) {
       otherFeatures = others.map((other, i) => {
         const [name, description] = other.split(':');
-        return <Feature key={i} name={name} description={description} />
+        return <BackgroundFeature key={i} name={name} description={description} />
       });
     }
 
@@ -364,10 +388,10 @@ const Background = ({ background }) => {
             <div className="card mb-16">
                 <h2>Background: {backgroundName}</h2>
                 <hr />
-                <Feature name="Trait" description={trait} />
-                <Feature name="Ideal" description={ideal} />
-                <Feature name="Bond" description={bond} />
-                <Feature name="Flaw" description={flaw} />
+                <BackgroundFeature name="Trait" description={trait} />
+                <BackgroundFeature name="Ideal" description={ideal} />
+                <BackgroundFeature name="Bond" description={bond} />
+                <BackgroundFeature name="Flaw" description={flaw} />
                 { (otherFeatures && otherFeatures.length > 0) &&
                   <div>
                     <hr />
@@ -375,7 +399,7 @@ const Background = ({ background }) => {
                   </div>
                 }
                 <hr />
-                <Feature name={backgroundFeature.name} description={backgroundFeature.description} />
+                <BackgroundFeature name={backgroundFeature.name} description={backgroundFeature.description} />
             </div>
         </div>
     )
